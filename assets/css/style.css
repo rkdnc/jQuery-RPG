@@ -1,0 +1,25 @@
+body {
+    font-family: 'Press Start 2P', cursive;
+    color: #eeeeee;
+    background-color: #000000;
+}
+#charSelect {
+    border-style: double;
+    border-color: #eeeeee;
+    border-width: 4px;
+    background: linear-gradient(lightblue, blue);
+}
+ul {
+    list-style-type: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+li {
+    float: left;
+    padding: 8px;
+    border-style: double;
+    border-color: #eeeeee;
+    border-width: 4px;
+    background: linear-gradient(lightblue, blue);
+}
