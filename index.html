@@ -5,24 +5,44 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">  
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">    
     <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+
     
 </head>
 <body>
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12" id="charSelect">
-                <h1>CHOOSE YOUR CHARACTER</h1>
-                <ul>
-                    <li id="fighter"><img src="assets/images/fighter-walk.gif" alt="fighter"></li>
-                    <li id="blackMage"><img src="assets/images/blackMage-walk.gif" alt="Black Mage"></li>
-                    <li id="thief"><img src="assets/images/thief-walk.gif" alt="Thief"></li>
-                    <li id="redMage"><img src="assets/images/RedMage-Walk.gif" alt="Red Mage"></li>
-                </ul>
+                <h1 id="title">CHOOSE YOUR CHARACTER</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 character" id="fighter">
+                        <img src="assets/images/fighter-walk.gif" alt="fighter">
+                    </div>
+                    <div class="col-md-3 character" id="blackMage">
+                        <img src="assets/images/blackMage-walk.gif" alt="Black Mage">
+                    </div>
+                    <div class="col-md-3 character" id="thief">
+                        <img src="assets/images/thief-walk.gif" alt="Thief">
+                    </div>
+                    <div class="col-md-3 character" id="redMage">
+                        <img src="assets/images/RedMage-Walk.gif" alt="Red Mage">
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4" id="selectedChar"></div>
-            <div class="col-lg-8" id="combatMenu"></div>
+            <div class="col-lg-4" id="selectedChar">
+                <h1 id="charHeader"></h1>                
+            </div>
+            <div class="col-lg-4" id="defender">
+                <h1 id="defHeader"></h1>
+            </div>
+            <div class="col-lg-4" id="combatMenu">
+                <h1 id="combatHeader"></h1>
+            </div>
         </div>
     </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>

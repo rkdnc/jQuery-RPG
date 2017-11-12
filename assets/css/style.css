@@ -3,23 +3,36 @@ body {
     color: #eeeeee;
     background-color: #000000;
 }
-#charSelect {
+#title {
     border-style: double;
-    border-color: #eeeeee;
-    border-width: 4px;
-    background: linear-gradient(lightblue, blue);
+    text-align: center;
+    padding: 10px;
 }
-ul {
-    list-style-type: none;
-    display: inline;
-    margin: 0;
-    padding: 0;
+h1 {
+    text-align: center;
 }
-li {
+.character{
     float: left;
     padding: 8px;
     border-style: double;
     border-color: #eeeeee;
     border-width: 4px;
     background: linear-gradient(lightblue, blue);
+    margin: 20px;
+    margin-left: 137px;
+    width: 150px;
+    height: 200px;
+    font-size: 11px;
+}
+img {
+    width: 100px;
+    height: 150px;
+    margin: 10px;
+    margin-left: 10px;
+}
+.col-lg-4 {
+    border-style: solid;
+    border-color: #eeeeee;
+    border-width: 4px;
+    height: 300px;
 }
