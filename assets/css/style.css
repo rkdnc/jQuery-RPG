@@ -11,7 +11,7 @@ body {
 h1 {
     text-align: center;
 }
-.character{
+.character, .enemy{
     float: left;
     padding: 8px;
     border-style: double;
