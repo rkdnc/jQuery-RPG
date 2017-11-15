@@ -46,56 +46,70 @@ $(".character").on("click", function () {
         $("#charHeader").append("YOUR CHARACTER");
         //Depending on what character is selected, jQuery removes that option and places it into the selected Character div. The state changes to 1 so the enemy can be selected.
         if (selectedChar == "fighter") {
-            playerChar.append("<img class='character' src=assets/images/" + selectedChar + "-walk.gif>");
-            playerChar.append();
+            // $("#selectedChar").addClass("character");
+            playerChar.append("<img class='player' id='fighter' src=assets/images/" + selectedChar + "-walk.gif>");
             $("#fighter").remove();
             state = 1;
         };
         if (selectedChar == "blackMage") {
-            playerChar.append("<img class='player' src=assets/images/" + selectedChar + "-walk.gif>");
-            playerChar.append();
+            playerChar.append("<img class='player' class='player' id='blackMage' src=assets/images/" + selectedChar + "-walk.gif>");
             $("#blackMage").remove();
+            playerChar.addClass(selectedChar);
             state = 1;
         };
         if (selectedChar == "thief") {
-            playerChar.append("<img class='player' src=assets/images/" + selectedChar + "-walk.gif>");
-            playerChar.append();;
+            playerChar.append("<img class='player' id='thief' src=assets/images/" + selectedChar + "-walk.gif>");;
             $("#thief").remove();
             state = 1;
         };
         if (selectedChar == "redMage") {
-            playerChar.append("<img class='player' src=assets/images/" + selectedChar + "-walk.gif>");
-            playerChar.append();
+            playerChar.append("<img class='player' id='redMage' src=assets/images/" + selectedChar + "-walk.gif>");
             $("#redMage").remove();
             state = 1;
         }
         $(".col-md-3").removeClass("character").addClass("enemy");
         
-        // if (state === 1 && selectedChar == $(this) {
-        //     $("defHeader").append("YOUR ENEMY");
-        //     if (defendingChar == "fighter") {
-        //         defendingChar.append("<img class='defender' src=assets/images/" + selectedChar + "-walk.gif>");
-        //         defendingChar.append();
-        //         $("#fighter").remove();
-        //         state = 2;
-        //     }
-        //     if (defendingChar == "blackMage") {
-        //         defendingChar.append("<img class='defender' src=assets/images/" + selectedChar + "-walk.gif>");
-        //         defendingChar.append();
-        //         $("#fighter").remove();
-        //         state = 2;
-        //     }
-        // }
         //Once a character has been selected, the state changes to 1 where the player can now pick an enemy to face.
     }
+    if (($(this).hasClass("enemy") === true) && (state === 1)) {
+        $("#defHeader").append("YOUR ENEMY");        
+        if (selectedChar == "fighter") {
+            defendingChar.append("<img class='defender' id='fighter' src=assets/images/" + selectedChar + "-walk.gif>");
+            $("#fighter").remove();
+            state = 2;
+        };
+        if (selectedChar == "blackMage") {
+            defendingChar.append("<img class='defender' id='blackMage' src=assets/images/" + selectedChar + "-walk.gif>");
+            $("#blackMage").remove();
+            state = 2;
+        };
+        if (selectedChar == "thief") {
+            defendingChar.append("<img class='defender' id='thief' src=assets/images/" + selectedChar + "-walk.gif>");
+            $("#thief").remove();
+            state = 2;
+        };
+        if (selectedChar == "redMage") {
+            defendingChar.append("<img class='defender' id='redMage' src=assets/images/" + selectedChar + "-walk.gif>");
+            $("#redMage").remove();
+            state = 2;
+            
+        };
+    }
+    console.log($(".player").attr("id"));
+    //jQuery should insert an "attack" button once the defender is selected in the charSelect div.
+    if(state == 2) {
+        $("#combatMenu").append("<button type='button' class='btn btn-default' id='combatBtn'>Fight</button>")
+    }
+})
 
-    console.log($(this).attr("class"));
-    console.log(selectedChar);
+$("#combatBtn").on("click", function() {
+    var r = $(".player").attr("id");
+    console.log(r);    
+
 })
 
 
 
-//jQuery should insert an "attack" button once the defender is selected in the charSelect div.
 
 //Every time the player attacks, the game should subtract the amount of the attack from the defender's health, and increase the player's attack. The game should display the totals in the combatMenu div.
 

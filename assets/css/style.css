@@ -5,34 +5,46 @@ body {
 }
 #title {
     border-style: double;
+    border-radius: 10px;
+    border-width: 6px;
     text-align: center;
     padding: 10px;
 }
 h1 {
     text-align: center;
+    font-size: 15px;
 }
 .character, .enemy{
-    float: left;
-    padding: 8px;
+    /* padding: 8px; */
     border-style: double;
     border-color: #eeeeee;
-    border-width: 4px;
-    background: linear-gradient(lightblue, blue);
-    margin: 20px;
-    margin-left: 137px;
-    width: 150px;
+    border-width: 6px;
+    border-radius: 10px;
+    /* margin-left: 137px; */
     height: 200px;
     font-size: 11px;
+    /* background: linear-gradient(lightblue, blue); */
+    
 }
 img {
-    width: 100px;
+    width: 95px;
     height: 150px;
-    margin: 10px;
-    margin-left: 10px;
+    margin: auto;
+    display: block;
+    /* margin-bottom: 10px; */
 }
 .col-lg-4 {
-    border-style: solid;
+    border-style: double;
     border-color: #eeeeee;
-    border-width: 4px;
+    border-width: 6px;
+    border-radius: 10px;
     height: 300px;
+    margin-top: 10px;
+}
+.col-md-3 {
+   text-align: center;
+   padding: 10px;
+}
+#combatMenu {
+    text-align: center;
 }
