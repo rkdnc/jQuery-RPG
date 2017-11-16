@@ -88,7 +88,7 @@ $(".character").on("click", function () {
             $("#enemHp").html("Enemy Health: " + fighter.health);
             state = 2;
         };
-        if (selectedChar == "blackMage") {
+        if (selectedChar == "blackmage") {
             defendingChar.append("<img class='defender'data-arrayId='1' src=assets/images/" + selectedChar + "-walk.gif>");
             $("#blackMage").remove();
             $("#enemHp").html("Enemy Health: " + blackMage.health);
@@ -100,7 +100,7 @@ $(".character").on("click", function () {
             $("#enemHp").html("Enemy Health: " + thief.health);
             state = 2;
         };
-        if (selectedChar == "redMage") {
+        if (selectedChar == "redmage") {
             defendingChar.append("<img class='defender' data-arrayId='3' src=assets/images/" + selectedChar + "-walk.gif>");
             $("#redMage").remove();
             $("#enemHp").html("Enemy Health: " + redMage.health);
