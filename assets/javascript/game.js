@@ -147,11 +147,13 @@ $("#combatBtn").on("click", function() {
         defeatedEnemies.push(currEnemy);
         state = 1;
         //The player should now pick a new defender to begin combat, and fight each other character in the game.
+        if(selectedChar.health < 1 && currEnemy.health < 1) {
+            $("#result").empty();
+            $("#result").append("YOU HAVE FOUGHT VALIANTLY, AND TIED ");
+            $(".btn-danger").addClass("btnActive");
+        }
     }
-    if(selectedChar.health < 1 && currEnemy.health < 1) {
-        $("#result").append("YOU HAVE FOUGHT VALIANTLY, AND TIED ");
-        $(".btn-danger").addClass("btnActive");
-    }
+    
     $("#enemHp").html("Enemy Health: " + currEnemy.health);
     $("#plyrHp").html("Player Health: " + selectedChar.health);
     console.log(selectedChar.health)
@@ -160,7 +162,11 @@ $("#combatBtn").on("click", function() {
     if (defeatedEnemies.length == 3){
         $("#result").append("YOU HAVE DEFEATED ALL ENEMIES")
         $(".btn-danger").addClass("btnActive");
-        
+        if(selectedChar.health < 1 && currEnemy.health < 1) {
+            $("#result").empty();
+            $("#result").append("YOU HAVE FOUGHT VALIANTLY, AND TIED ");
+            $(".btn-danger").addClass("btnActive");
+        }
     }
 });})
 $(".btn-danger").on("click", function() {
