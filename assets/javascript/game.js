@@ -131,8 +131,8 @@ $("#combatBtn").on("click", function() {
     selectedChar.attack = selectedChar.attack + selectedChar.attack
     selectedChar.health = newHealth
     //If the player's HP runs out, they lose the game and must restart.
-    if(selectedChar.health < 10) {
-        $("#result").append("YOU DIED")
+    if(selectedChar.health < 1) {
+        $("#result").append("YOU DIED ")
         $(".btn-danger").addClass("btnActive");
         $(".enemy").remove()
         
@@ -140,7 +140,7 @@ $("#combatBtn").on("click", function() {
     //The defender should counterattack at a flat number, which will never increase.
     
     currEnemy.health = damage;
-    if(currEnemy.health < 10) {
+    if(currEnemy.health < 1) {
         $("#result").append("YOU WON ");
         $(".defender").remove();
         $("#defHeader").empty();
@@ -148,7 +148,10 @@ $("#combatBtn").on("click", function() {
         state = 1;
         //The player should now pick a new defender to begin combat, and fight each other character in the game.
     }
-    
+    if(selectedChar.health < 1 && currEnemy.health < 1) {
+        $("#result").append("YOU HAVE FOUGHT VALIANTLY, AND TIED ");
+        $(".btn-danger").addClass("btnActive");
+    }
     $("#enemHp").html("Enemy Health: " + currEnemy.health);
     $("#plyrHp").html("Player Health: " + selectedChar.health);
     console.log(selectedChar.health)
