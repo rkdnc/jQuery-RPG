@@ -16,7 +16,7 @@ $("#fighter").append("Health: " + fighter.health);
 var blackmage = {
     name: "blackmage",
     health: 160,
-    attack: 60,
+    attack: 70,
     defense: 20
 };
 $("#blackmage").append("Health: " + blackmage.health);
@@ -141,7 +141,7 @@ $("#combatBtn").on("click", function() {
     
     currEnemy.health = damage;
     if(currEnemy.health < 10) {
-        $("#result").append("YOU WON");
+        $("#result").append("YOU WON ");
         $(".defender").remove();
         $("#defHeader").empty();
         defeatedEnemies.push(currEnemy);
