@@ -13,13 +13,13 @@ var fighter = {
 };
 $("#fighter").append("Health: " + fighter.health);
 //Black Mage
-var blackMage = {
-    name: "blackMage",
+var blackmage = {
+    name: "blackmage",
     health: 150,
     attack: 60,
     defense: 20
 };
-$("#blackMage").append("Health: " + blackMage.health);
+$("#blackmage").append("Health: " + blackmage.health);
 //Thief 
 var thief = {
     name: "thief",
@@ -29,14 +29,14 @@ var thief = {
 };
 $("#thief").append("Health: " + thief.health);
 //Red Mage
-var redMage = {
-    name: "redMage",
+var redmage = {
+    name: "redmage",
     health: 160,
     attack: 50,
     defense: 50
 };
-var characterArray = [fighter, blackMage, thief, redMage];
-$("#redMage").append("Health: " + redMage.health);
+var characterArray = [fighter, blackmage, thief, redmage];
+$("#redmage").append("Health: " + redmage.health);
 //Once player has selected their character, they must select a defender.
 var selectedChar = "";
 var thunderdome = $("#combatMenu");
@@ -57,11 +57,11 @@ $(".character").on("click", function () {
             $("#plyrHp").html("Player Health:" + fighter.health);
             state = 1;
         };
-        if (selectedChar == "blackMage") {
+        if (selectedChar == "blackmage") {
             playerChar.append("<img class='player'  data-arrayId='1' src=assets/images/" + selectedChar + ".gif>");
-            $("#blackMage").remove();
+            $("#blackmage").remove();
             playerChar.addClass(selectedChar);
-            $("#plyrHp").html("Player Health:" + blackMage.health);
+            $("#plyrHp").html("Player Health:" + blackmage.health);
             state = 1;
         };
         if (selectedChar == "thief") {
@@ -70,10 +70,10 @@ $(".character").on("click", function () {
             $("#plyrHp").html("Player Health: " + thief.health);
             state = 1;
         };
-        if (selectedChar == "redMage") {
+        if (selectedChar == "redmage") {
             playerChar.append("<img class='player' data-arrayId='3' src=assets/images/" + selectedChar + ".gif>");
-            $("#redMage").remove();
-            $("#plyrHp").html("Player Health:" + redMage.health);
+            $("#redmage").remove();
+            $("#plyrHp").html("Player Health:" + redmage.health);
             state = 1;
         }
         $(".col-md-3").removeClass("character").addClass("enemy");
@@ -90,8 +90,8 @@ $(".character").on("click", function () {
         };
         if (selectedChar == "blackmage") {
             defendingChar.append("<img class='defender'data-arrayId='1' src=assets/images/" + selectedChar + ".gif>");
-            $("#blackMage").remove();
-            $("#enemHp").html("Enemy Health: " + blackMage.health);
+            $("#blackmage").remove();
+            $("#enemHp").html("Enemy Health: " + blackmage.health);
             state = 2;
         };
         if (selectedChar == "thief") {
@@ -102,8 +102,8 @@ $(".character").on("click", function () {
         };
         if (selectedChar == "redmage") {
             defendingChar.append("<img class='defender' data-arrayId='3' src=assets/images/" + selectedChar + ".gif>");
-            $("#redMage").remove();
-            $("#enemHp").html("Enemy Health: " + redMage.health);
+            $("#redmage").remove();
+            $("#enemHp").html("Enemy Health: " + redmage.health);
             state = 2;
             
         };
