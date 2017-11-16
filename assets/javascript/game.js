@@ -16,8 +16,8 @@ $("#fighter").append("Health: " + fighter.health);
 var blackmage = {
     name: "blackmage",
     health: 160,
-    attack: 70,
-    defense: 20
+    attack: 80,
+    defense: 30
 };
 $("#blackmage").append("Health: " + blackmage.health);
 //Thief 
@@ -32,7 +32,7 @@ $("#thief").append("Health: " + thief.health);
 var redmage = {
     name: "redmage",
     health: 170,
-    attack: 50,
+    attack: 60,
     defense: 50
 };
 var characterArray = [fighter, blackmage, thief, redmage];
@@ -132,7 +132,7 @@ $("#combatBtn").on("click", function() {
     selectedChar.health = newHealth
     //If the player's HP runs out, they lose the game and must restart.
     if(selectedChar.health < 10) {
-        $("#result").append("YOU HAVE DEFEATED THE ENEMY")
+        $("#result").append("YOU DIED")
         $(".btn-danger").addClass("btnActive");
         $(".enemy").remove()
         
