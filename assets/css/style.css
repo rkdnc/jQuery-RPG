@@ -48,3 +48,9 @@ img {
 #combatMenu {
     text-align: center;
 }
+.btnInactive {
+    display: none;
+}
+.btnActive{
+    display:inline;
+}

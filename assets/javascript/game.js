@@ -1,10 +1,11 @@
-$(document).ready()
+$(document).ready(function() {
 // User must select a character to begin the game.
 
 //Character stats
 
 //Fighter
 var fighter = {
+    name: "fighter",
     health: 120,
     attack: 30,
     defense: 30,
@@ -13,6 +14,7 @@ var fighter = {
 $("#fighter").append("Health: " + fighter.health);
 //Black Mage
 var blackMage = {
+    name: "blackMage",
     health: 80,
     attack: 60,
     defense: 20,
@@ -20,6 +22,7 @@ var blackMage = {
 $("#blackMage").append("Health: " + blackMage.health);
 //Thief 
 var thief = {
+    name: "thief",
     health: 90,
     attack: 25,
     defense: 30,
@@ -27,10 +30,12 @@ var thief = {
 $("#thief").append("Health: " + thief.health);
 //Red Mage
 var redMage = {
+    name: "redMage",
     health: 110,
     attack: 30,
     defense: 30,
 };
+var characterArray = [fighter, blackMage, thief, redMage];
 $("#redMage").append("Health: " + redMage.health);
 //Once player has selected their character, they must select a defender.
 var selectedChar = "";
@@ -95,18 +100,21 @@ $(".character").on("click", function () {
             
         };
     }
-    console.log($(".player").attr("id"));
+
     //jQuery should insert an "attack" button once the defender is selected in the charSelect div.
     if(state == 2) {
-        $("#combatMenu").append("<button type='button' class='btn btn-default' id='combatBtn'>Fight</button>")
+        $("#combatBtn").addClass("btnActive");
+       
     }
-})
-
+    //For some reason, this only works when nested within this other click event.....but I'll take it.
+    
+});
 $("#combatBtn").on("click", function() {
-    var r = $(".player").attr("id");
-    console.log(r);    
+    var player = $(".player").attr("id");
+    console.log(player);
+    var enemy = $(".defender").attr("id");
+});})
 
-})
 
 
 
