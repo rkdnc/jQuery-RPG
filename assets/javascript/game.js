@@ -52,26 +52,26 @@ $(".character").on("click", function () {
         //Depending on what character is selected, jQuery removes that option and places it into the selected Character div. The state changes to 1 so the enemy can be selected.
         if (selectedChar == "fighter") {
             // $("#selectedChar").addClass("character");
-            playerChar.append("<img class='player' data-arrayId='0' src=assets/images/" + selectedChar + "-walk.gif>");
+            playerChar.append("<img class='player' data-arrayId='0' src=assets/images/" + selectedChar + ".gif>");
             $("#fighter").remove();
             $("#plyrHp").html("Player Health:" + fighter.health);
             state = 1;
         };
         if (selectedChar == "blackMage") {
-            playerChar.append("<img class='player'  data-arrayId='1' src=assets/images/" + selectedChar + "-walk.gif>");
+            playerChar.append("<img class='player'  data-arrayId='1' src=assets/images/" + selectedChar + ".gif>");
             $("#blackMage").remove();
             playerChar.addClass(selectedChar);
             $("#plyrHp").html("Player Health:" + blackMage.health);
             state = 1;
         };
         if (selectedChar == "thief") {
-            playerChar.append("<img class='player' data-arrayId='2' src=assets/images/" + selectedChar + "-walk.gif>");
+            playerChar.append("<img class='player' data-arrayId='2' src=assets/images/" + selectedChar + ".gif>");
             $("#thief").remove();
             $("#plyrHp").html("Player Health: " + thief.health);
             state = 1;
         };
         if (selectedChar == "redMage") {
-            playerChar.append("<img class='player' data-arrayId='3' src=assets/images/" + selectedChar + "-walk.gif>");
+            playerChar.append("<img class='player' data-arrayId='3' src=assets/images/" + selectedChar + ".gif>");
             $("#redMage").remove();
             $("#plyrHp").html("Player Health:" + redMage.health);
             state = 1;
@@ -83,25 +83,25 @@ $(".character").on("click", function () {
     if (($(this).hasClass("enemy") === true) && (state === 1)) {
         $("#defHeader").append("YOUR ENEMY");        
         if (selectedChar == "fighter") {
-            defendingChar.append("<img class='defender' data-arrayId='0' src=assets/images/" + selectedChar + "-walk.gif>");
+            defendingChar.append("<img class='defender' data-arrayId='0' src=assets/images/" + selectedChar + ".gif>");
             $("#fighter").remove();
             $("#enemHp").html("Enemy Health: " + fighter.health);
             state = 2;
         };
         if (selectedChar == "blackmage") {
-            defendingChar.append("<img class='defender'data-arrayId='1' src=assets/images/" + selectedChar + "-walk.gif>");
+            defendingChar.append("<img class='defender'data-arrayId='1' src=assets/images/" + selectedChar + ".gif>");
             $("#blackMage").remove();
             $("#enemHp").html("Enemy Health: " + blackMage.health);
             state = 2;
         };
         if (selectedChar == "thief") {
-            defendingChar.append("<img class='defender' data-arrayId='2' src=assets/images/" + selectedChar + "-walk.gif>");
+            defendingChar.append("<img class='defender' data-arrayId='2' src=assets/images/" + selectedChar + ".gif>");
             $("#thief").remove();
             $("#enemHp").html("Enemy Health: " + thief.health);
             state = 2;
         };
         if (selectedChar == "redmage") {
-            defendingChar.append("<img class='defender' data-arrayId='3' src=assets/images/" + selectedChar + "-walk.gif>");
+            defendingChar.append("<img class='defender' data-arrayId='3' src=assets/images/" + selectedChar + ".gif>");
             $("#redMage").remove();
             $("#enemHp").html("Enemy Health: " + redMage.health);
             state = 2;
