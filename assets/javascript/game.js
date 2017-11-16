@@ -25,7 +25,7 @@ var thief = {
     name: "thief",
     health: 180,
     attack: 50,
-    defense: 50
+    defense: 60
 };
 $("#thief").append("Health: " + thief.health);
 //Red Mage
@@ -33,7 +33,7 @@ var redmage = {
     name: "redmage",
     health: 170,
     attack: 60,
-    defense: 50
+    defense: 40
 };
 var characterArray = [fighter, blackmage, thief, redmage];
 $("#redmage").append("Health: " + redmage.health);
