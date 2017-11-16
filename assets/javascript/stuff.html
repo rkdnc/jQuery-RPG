@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>a practice grid</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+	<div id= "fighter" class = "character" data-arrayId = "0">
+		<img src="">
+		<p>some text</p>
+	</div>
+	<div id= "thief" class = "character" data-arrayId = "1">
+		<img src="">
+		<p>some text</p>
+	</div>
+	<div id= "blackMage" class = "character" data-arrayId = "2">
+		<img src="">
+		<p>some text</p>
+	</div>
+	<div id= "redMage" class = "character" data-arrayId = "3">
+		<img src="">
+		<p>some text</p>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+	<script type="text/javascript">
+
+		var fighter = {
+		    name: "fighter",
+		    health: 120,
+		    attack: 30,
+		    defense: 30,
+
+		};
+		$("#fighter").append("Health: " + fighter.health);
+		//Black Mage
+		var blackMage = {
+		    name: "blackMage",
+		    health: 80,
+		    attack: 60,
+		    defense: 20,
+		};
+		$("#blackMage").append("Health: " + blackMage.health);
+		//Thief 
+		var thief = {
+		    name: "thief",
+		    health: 90,
+		    attack: 25,
+		    defense: 30,
+		};
+		$("#thief").append("Health: " + thief.health);
+		//Red Mage
+		var redMage = {
+		    name: "redMage",
+		    health: 110,
+		    attack: 30,
+		    defense: 30,
+		};
+		var characterArray = [fighter, blackMage, thief, redMage];
+		var myCharacter;
+		$(".character").on("click",function(){
+			var index = $(this).attr("data-arrayId");
+			myCharacter = characterArray[index];
+			console.log(myCharacter);
+		})
+
+
+	</script>
+
+</body>
+</html>
