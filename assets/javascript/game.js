@@ -15,7 +15,7 @@ $("#fighter").append("Health: " + fighter.health);
 //Black Mage
 var blackmage = {
     name: "blackmage",
-    health: 150,
+    health: 160,
     attack: 60,
     defense: 20
 };
@@ -23,7 +23,7 @@ $("#blackmage").append("Health: " + blackmage.health);
 //Thief 
 var thief = {
     name: "thief",
-    health: 175,
+    health: 180,
     attack: 50,
     defense: 50
 };
@@ -31,7 +31,7 @@ $("#thief").append("Health: " + thief.health);
 //Red Mage
 var redmage = {
     name: "redmage",
-    health: 160,
+    health: 170,
     attack: 50,
     defense: 50
 };
@@ -49,9 +49,8 @@ $(".character").on("click", function () {
     var defendingChar = $("#defender");
     if ($(this).hasClass("character") === true) {
         $("#charHeader").append("YOUR CHARACTER");
-        //Depending on what character is selected, jQuery removes that option and places it into the selected Character div. The state changes to 1 so the enemy can be selected.
+        //Depending on what character is selected, jQuery removes that option and places it into the selected Character div. The state changes to 1 so the enemy can be selected. This could probably be reduced to some function callbacks, but I didn't get around to re-writing the code.
         if (selectedChar == "fighter") {
-            // $("#selectedChar").addClass("character");
             playerChar.append("<img class='player' data-arrayId='0' src=assets/images/" + selectedChar + ".gif>");
             $("#fighter").remove();
             $("#plyrHp").html("Player Health:" + fighter.health);
@@ -126,14 +125,14 @@ $("#combatBtn").on("click", function() {
     var enemy = $(".defender").attr("data-arrayId");
     selectedChar = characterArray[player];
     currEnemy = characterArray[enemy];
-
+    $("#result").empty()
     var newHealth = selectedChar.health - currEnemy.defense;
     var damage = currEnemy.health - selectedChar.attack
     selectedChar.attack = selectedChar.attack + selectedChar.attack
     selectedChar.health = newHealth
     //If the player's HP runs out, they lose the game and must restart.
     if(selectedChar.health < 10) {
-        alert("You lose")
+        $("#result").append("YOU HAVE DEFEATED THE ENEMY")
         $(".btn-danger").addClass("btnActive");
         $(".enemy").remove()
         
@@ -142,7 +141,7 @@ $("#combatBtn").on("click", function() {
     
     currEnemy.health = damage;
     if(currEnemy.health < 10) {
-        alert("enemy defeated")
+        $("#result").append("YOU WON");
         $(".defender").remove();
         $("#defHeader").empty();
         defeatedEnemies.push(currEnemy);
@@ -156,7 +155,7 @@ $("#combatBtn").on("click", function() {
     console.log(currEnemy.health);
     //If the player eliminates all other characters, they win the game and are prompted to restart the game.
     if (defeatedEnemies.length == 3){
-        alert ("You've won!")
+        $("#result").append("YOU HAVE DEFEATED ALL ENEMIES")
         $(".btn-danger").addClass("btnActive");
         
     }
